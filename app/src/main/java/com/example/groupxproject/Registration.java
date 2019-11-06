@@ -19,17 +19,15 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Registration extends AppCompatActivity {
 
-     EditText mFullName, mEmail, mAddress, mPassword;
-     TextView mLoginBtn;
-     Button mSignUpBtn;
-     FirebaseAuth fAuth;
-     ProgressBar progressBar;
-
+    EditText mFullName, mEmail, mAddress, mPassword;
+    TextView mLoginBtn;
+    Button mSignUpBtn;
+    FirebaseAuth fAuth;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-
         mFullName = findViewById(R.id.fullnameEditText);
         mEmail =  findViewById(R.id.emailEditText);
         mAddress = findViewById(R.id.addressEditText);
@@ -82,5 +80,6 @@ public class Registration extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),LogIn.class));
             }
         });
+
     }
 }
