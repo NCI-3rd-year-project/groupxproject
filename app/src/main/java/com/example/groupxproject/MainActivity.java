@@ -21,6 +21,11 @@ public class MainActivity extends AppCompatActivity {
 
     public Button but1;
     public Button but2;
+
+    //Frank_test
+    public Button but3;
+
+
     public void init(){
         but1 = (Button)findViewById(R.id.BtnLogin);
         but1.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +44,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(signup);
             }
         });
+
+        //Frank_test
+        but3 = (Button)findViewById(R.id.btnTem);
+        but3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Test = new Intent(MainActivity. this, ShowActivity.class);
+                startActivity(Test);
+            }
+        });
+
     }
 
     @Override
