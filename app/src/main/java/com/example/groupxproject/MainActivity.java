@@ -22,8 +22,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private Button button1;
-    private Button post;
+    private Button buttonHome;
+
     RecyclerView mRecyclerView;
     MyAdapter myAdapter;
 
@@ -32,22 +32,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button1 = (Button) findViewById(R.id.BtnLogin);
-        button1.setOnClickListener(new View.OnClickListener() {
+        buttonHome = (Button) findViewById(R.id.btnHome);
+        buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openLogInActivity();
+                openMainPage();
             }
         });
 
-        post = (Button) findViewById(R.id.btnTem);
-        post.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
-                openPostActivity();
-            }
-        });
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -60,37 +53,37 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Model> model = new ArrayList<>();
         Model m = new Model();
         m.setTitle("Lloyds Pharmacy");
-        m.setDescription("This is the Lloyds pharmacy descriptions..");
+        m.setDescription("LloydsPharmacy is a British pharmacy company, with more than 1,500 pharmacies, the biggest one stores in Dublin at 39 Stoneybatter, Dublin, D07 AE37; Phone: (01) 679 2086");
         m.setImg(R.drawable.logo);
         model.add(m);
 
         m = new Model();
         m.setTitle("Boots Pharmacy");
-        m.setDescription("This is the Boots pharmacy descriptions..");
+        m.setDescription("Boots is a drugstore chain in the UK and Ireland, with stores in major shopping streets, shopping centres and airports in the UK. Currently, boots operate more than 2,500 stores in the UK and Ireland. The main boots store in Dublin at Unit 9, Jervis Shopping Centre, Henry St, North City, Dublin 1, D01 E8H4.");
         m.setImg(R.drawable.boots1);
         model.add(m);
 
         m = new Model();
         m.setTitle("Pure Pharmacy");
-        m.setDescription("This is the Pure pharmacy descriptions..");
+        m.setDescription("Pure Pharmacy first opened its doors in 2011. A 100% Irish-owned company, Pure Pharmacy always strives to provide outstanding services and competitive pricing for its customers.It has 14 stores in Dublin. The official web is: https://www.purepharmacy.ie");
         m.setImg(R.drawable.pure);
         model.add(m);
 
         m = new Model();
         m.setTitle("Haven Pharmacy");
-        m.setDescription("This is the Haven pharmacy descriptions..");
+        m.setDescription("Think of us like you would your family GP. Haven Pharmacy is here for you and your family to help you throughout life’s journey. From nappy rashes, to head lice, to the common cold and beyond, our pharmacists are on hand to look after you and your family’s health and well-being.Haven stores are gathered in the city center of Dublin. Official Web: https://havenpharmacy.ie");
         m.setImg(R.drawable.havenpharmacy);
         model.add(m);
 
         m = new Model();
         m.setTitle("Meaghers Pharmacy");
-        m.setDescription("This is the Meaghers pharmacy descriptions..");
+        m.setDescription("Meaghers Pharmacy-a leading Dublin pharmacy group with 9 stores & over 60 staff. We offer Pharmacy, Advanced Consultation & Retail services in all stores. Meagher's Pharmacy Group was first opened in Baggot Street in 1921 and operated by the Meagher family. Main Store address: The Mater Misericordiae University Hospital; Phone: (01) 811 7781");
         m.setImg(R.drawable.meaghers);
         model.add(m);
 
         m = new Model();
         m.setTitle("Hickey's Pharmacy");
-        m.setDescription("This is the Hickey's pharmacy descriptions..");
+        m.setDescription("Hickey's Pharmacy is an Irish-owned Community Pharmacy Group with a proud record of serving our customers for over 20 years. We operate in the heart of communities, catering for the needs of individuals, families and patients in residential care. The main store at  21 Grafton Street, Dublin 2, D02 FW29; Phone:(01) 679 0467");
         m.setImg(R.drawable.hickeys);
         model.add(m);
 
@@ -98,14 +91,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openLogInActivity() {
-        Intent login = new Intent(MainActivity.this, LogIn.class);
-        startActivity(login);
+    public void openMainPage() {
+        Intent MainPage = new Intent(MainActivity.this, MainPage.class);
+        startActivity(MainPage);
     }
 
-    public void openPostActivity() {
-        Intent login = new Intent(MainActivity.this, PostActivity.class);
-        startActivity(login);
 
-    }
 }
