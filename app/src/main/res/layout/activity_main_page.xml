@@ -22,10 +22,10 @@
 
     <Button
         android:id="@+id/ButtonLogin"
-        android:layout_width="147dp"
-        android:layout_height="46dp"
-        android:text="Log In"
+        android:layout_width="141dp"
+        android:layout_height="52dp"
         android:background="@color/buttonColor"
+        android:text="Log In"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.246"
@@ -37,26 +37,14 @@
         android:id="@+id/button7"
         android:layout_width="134dp"
         android:layout_height="50dp"
+        android:background="@color/buttonColor"
         android:text=" Medicine"
-        android:background="@color/buttonColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.819"
+        app:layout_constraintHorizontal_bias="0.851"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+        app:layout_constraintVertical_bias="0.722" />
 
-    <Button
-        android:id="@+id/BtnPost"
-        android:layout_width="152dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="60dp"
-        android:text=" Post"
-        android:background="@color/buttonColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+
 </android.support.constraint.ConstraintLayout>

@@ -9,7 +9,7 @@ import android.widget.Button;
 public class MainPage extends AppCompatActivity {
 
     private Button buttonLogin;
-    private Button post;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,23 +24,12 @@ public class MainPage extends AppCompatActivity {
             }
         });
 
-        post = (Button) findViewById(R.id.BtnPost);
-        post.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
-                openPostActivity();
-            }
-        });
     }
-
     public void openLogIn() {
         Intent login = new Intent(MainPage.this, LogIn.class);
         startActivity(login);
     }
 
-    public void openPostActivity() {
-        Intent login = new Intent(MainPage.this, PostActivity.class);
-        startActivity(login);
-    }
+
 }

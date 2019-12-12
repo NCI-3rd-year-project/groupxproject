@@ -31,6 +31,8 @@ public class LogIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+
+
         mLogin = findViewById(R.id.loginButton);
         mEmail = findViewById(R.id.userEditText);
         mPassword = findViewById(R.id.passEditText);
@@ -43,11 +45,11 @@ public class LogIn extends AppCompatActivity {
             public void onClick(View view) {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
-                if (TextUtils.isEmpty(email)){
+                if (TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is required. ");
                     return;
                 }
-                if (password.length() < 10){
+                if (password.length() < 10) {
                     mPassword.setError("Password must be longer or equal to 10 characters");
                     return;
                 }
@@ -57,10 +59,10 @@ public class LogIn extends AppCompatActivity {
                 fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(LogIn.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        }else {
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        } else {
                             Toast.makeText(LogIn.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -70,9 +72,17 @@ public class LogIn extends AppCompatActivity {
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Registration.class));
+                startActivity(new Intent(getApplicationContext(), Registration.class));
             }
         });
 
+        mLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PostActivity.class));
+            }
+        });
     }
+
+
 }
