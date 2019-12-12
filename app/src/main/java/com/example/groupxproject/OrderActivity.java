@@ -26,7 +26,7 @@ public class OrderActivity extends AppCompatActivity {
     private EditText mPostMed;
     private Button mSubmitBtn2;
     private Uri mImageUri2 = null;
-    private ImageButton  mSelectImage;
+    private ImageButton  mSelectImage2;
 
     private static final int GALLERY_REQUEST = 1;
 
@@ -49,18 +49,18 @@ public class OrderActivity extends AppCompatActivity {
         mPostPhone = (EditText) findViewById(R.id.phoneField);
         mPostAddress = (EditText) findViewById(R.id.addressField);
         mPostMed = (EditText) findViewById(R.id.medField);
-        mSelectImage = (ImageButton) findViewById(R.id.imageSelect);
+        mSelectImage2 = (ImageButton) findViewById(R.id.imageSelect);
 
 
         mSubmitBtn2 = (Button) findViewById(R.id.submitBtn2);
         mStorage = FirebaseStorage.getInstance().getReference();
         mProgress = new ProgressDialog(this);
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Order");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Blog");
 
 
 
 
-        mSelectImage.setOnClickListener(new View.OnClickListener() {
+        mSelectImage2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -93,7 +93,7 @@ public class OrderActivity extends AppCompatActivity {
         final String address_val = mPostAddress.getText().toString().trim();
         final String med_val = mPostMed.getText().toString().trim();
 
-        if(!TextUtils.isEmpty(name_val) && !TextUtils.isEmpty(phone_val) && !TextUtils.isEmpty(address_val) && !TextUtils.isEmpty(med_val) ){
+        if(!TextUtils.isEmpty(name_val) && !TextUtils.isEmpty(phone_val) && !TextUtils.isEmpty(address_val) && !TextUtils.isEmpty(med_val) && mImageUri2 != null){
 
             StorageReference filepath = mStorage.child("Post_Images").child(mImageUri2.getLastPathSegment());
 
@@ -135,7 +135,7 @@ public class OrderActivity extends AppCompatActivity {
 
             mImageUri2 = data.getData();
 
-            mSelectImage.setImageURI(mImageUri2);
+            mSelectImage2.setImageURI(mImageUri2);
 
 
         }
