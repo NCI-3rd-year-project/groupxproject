@@ -24,6 +24,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private Button button1;
     private Button post;
+    private Button btnTem2;
     RecyclerView mRecyclerView;
     MyAdapter myAdapter;
 
@@ -48,6 +49,17 @@ public class MainActivity extends AppCompatActivity {
                 openPostActivity();
             }
         });
+
+    //    btnTem2 = (Button) findViewById(R.id.btnTem2);
+    //    btnTem2.setOnClickListener(new View.OnClickListener() {
+
+     //       @Override
+     //       public void onClick(View view) {
+     //           openOrderActivity();
+     //       }
+     //   });
+
+
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -104,8 +116,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openPostActivity() {
-        Intent login = new Intent(MainActivity.this, PostActivity.class);
+        Intent login = new Intent(MainActivity.this, ShowActivity.class);
         startActivity(login);
-
     }
+    //public void openOrderActivity() {
+    //    Intent login = new Intent(MainActivity.this, Order.class);
+    //    startActivity(login);
+    //}
+
+
 }
