@@ -50,14 +50,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    //    btnTem2 = (Button) findViewById(R.id.btnTem2);
-    //    btnTem2.setOnClickListener(new View.OnClickListener() {
+        btnTem2 = (Button) findViewById(R.id.btnTem2);
+        btnTem2.setOnClickListener(new View.OnClickListener() {
 
-     //       @Override
-     //       public void onClick(View view) {
-     //           openOrderActivity();
-     //       }
-     //   });
+           @Override
+           public void onClick(View view) {
+                openOrderActivity();
+            }
+        });
 
 
         mRecyclerView = findViewById(R.id.recyclerView);
@@ -119,10 +119,10 @@ public class MainActivity extends AppCompatActivity {
         Intent login = new Intent(MainActivity.this, ShowActivity.class);
         startActivity(login);
     }
-    //public void openOrderActivity() {
-    //    Intent login = new Intent(MainActivity.this, Order.class);
-    //    startActivity(login);
-    //}
+    public void openOrderActivity() {
+        Intent login = new Intent(MainActivity.this, OrderActivity.class);
+        startActivity(login);
+    }
 
 
 }
